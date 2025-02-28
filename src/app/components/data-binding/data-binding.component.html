@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-6">
+        1. Interpolation
+        <p>firstName => {{firstName}}</p>
+        <div>
+            {{rollNo}}
+        </div>
+        <span>{{isActive}}</span>
+    </div>
+    <div class="col-6">
+        Property Binding
+        <input type="text" [value]="firstName" name="" id="">
+        <br>
+        <input type="text" [placeholder]="myPlaceholder" name="" id="">
+        <br>
+        <div [class]="div1ClassName" style="height: 100px; width: 100px">
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomeMessage()">Welcome</button>
+    </div>
+    <div class="col-3">
+        <select (change)="onCityChanged()">
+            <option value="Toronto">Toronto</option>
+            <option value="Ottawa">Ottawa</option>
+            <option value="Montreal">Montreal</option>
+            <option value="Quebec">Quebec</option>
+        </select>
+    </div>
+</div>
