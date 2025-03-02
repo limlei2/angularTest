@@ -1,6 +1,15 @@
-<h1>Angular 19</h1>
-<app-data-binding></app-data-binding>
-<app-ng-if></app-ng-if>
-<app-ng-for></app-ng-for>
-<app-ng-class></app-ng-class>
-<app-ng-style></app-ng-style>
+<nav class="navbar navbar-inverse testnav" style="margin-top:16px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="admin">Angular 19</a>
+      </div>
+      <ul class="nav navbar-nav" style="visibility: visible; display: flex; flex-direction: row;">
+        <li><a class="nav-link active p-4" routerLink="admin">Admin</a></li>
+        <li><a class="nav-link active p-4" routerLink="dataBinding">Data Binding</a></li>
+        <li><a class="nav-link active p-4" routerLink="ng-class">Ng-Class</a></li>
+        <li><a class="nav-link active p-4" routerLink="control-flow">Control Statement</a></li>
+      </ul>
+      <button class="btn btn-danger navbar-btn">Button</button>
+    </div>
+  </nav>
+<router-outlet></router-outlet>
