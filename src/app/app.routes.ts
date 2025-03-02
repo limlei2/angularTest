@@ -5,6 +5,7 @@ import { NgClassComponent } from './components/ng-class/ng-class.component';
 import { ControlStatementComponent } from './components/control-statement/control-statement.component';
 import { SignalComponent } from './components/signal/signal.component';
 import { LinkedSignalComponent } from './components/linked-signal/linked-signal.component';
+import { TemplateformComponent } from './components/templateform/templateform.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path:'linkedsignal',
         component:LinkedSignalComponent
+    },
+    {
+        path:'templateform',
+        component:TemplateformComponent
     }
 ];
