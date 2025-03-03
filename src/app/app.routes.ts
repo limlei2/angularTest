@@ -6,6 +6,8 @@ import { ControlStatementComponent } from './components/control-statement/contro
 import { SignalComponent } from './components/signal/signal.component';
 import { LinkedSignalComponent } from './components/linked-signal/linked-signal.component';
 import { TemplateformComponent } from './components/templateform/templateform.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveformComponent } from './components/reactiveform/reactiveform.component';
 
 export const routes: Routes = [
     {
@@ -40,5 +42,9 @@ export const routes: Routes = [
     {
         path:'templateform',
         component:TemplateformComponent
+    },
+    {
+        path:'reactiveform',
+        component:ReactiveformComponent
     }
 ];
