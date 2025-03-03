@@ -9,6 +9,8 @@ import { TemplateformComponent } from './components/templateform/templateform.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './components/reactiveform/reactiveform.component';
 import { GetApiComponent } from './api/get-api/get-api.component';
+import { PostApiComponent } from './api/post-api/post-api.component';
+import { CustomerComponent } from './api/customer/customer.component';
 
 export const routes: Routes = [
     {
@@ -51,5 +53,13 @@ export const routes: Routes = [
     {
         path:'getapi',
         component:GetApiComponent
-    }
+    },
+    {
+        path:'postapi',
+        component:PostApiComponent
+    },
+    {
+        path:'customer',
+        component:CustomerComponent
+    },
 ];

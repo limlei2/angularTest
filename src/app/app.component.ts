@@ -16,4 +16,15 @@ import { NgStyleComponent } from "./components/ng-style/ng-style.component";
 })
 export class AppComponent {
   title = 'angularTest';
+  toggleDropdown(event: Event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('navbarDropdownMenuLink');
+    if (dropdown) {
+      dropdown.classList.toggle('show');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      if (dropdownMenu) {
+        dropdownMenu.classList.toggle('show');
+      }
+    }
+  }
 }
