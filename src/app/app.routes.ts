@@ -11,6 +11,8 @@ import { ReactiveformComponent } from './components/reactiveform/reactiveform.co
 import { GetApiComponent } from './api/get-api/get-api.component';
 import { PostApiComponent } from './api/post-api/post-api.component';
 import { CustomerComponent } from './api/customer/customer.component';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { NgForComponent } from './components/ng-for/ng-for.component';
 
 export const routes: Routes = [
     {
@@ -29,6 +31,10 @@ export const routes: Routes = [
     {
         path:'ng-class',
         component:NgClassComponent
+    },
+    {
+        path:'ngfor',
+        component:NgForComponent
     },
     {
         path: 'control-flow',
@@ -62,4 +68,8 @@ export const routes: Routes = [
         path:'customer',
         component:CustomerComponent
     },
+    {
+        path:'lifecycle',
+        component:LifeCycleComponent
+    }
 ];

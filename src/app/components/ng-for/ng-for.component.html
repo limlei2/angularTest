@@ -1,4 +1,36 @@
 <div class="row">
+    <div class="col-7">
+        courseName => {{courseName}}
+        <br>
+        upperCase => {{courseName | uppercase}}
+    </div>
+    <div class="col-7">
+        courseName => {{courseName}}
+        <br>
+        lowerCase => {{courseName | lowercase}}
+    </div>
+    <div class="col-5">
+        studentObj => {{studentObj}}
+        <br>
+        studentObj => {{studentObj | json}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-5">
+        currentDate => {{currentDate}}
+        <br>
+        currentDate only => {{currentDate | date}}
+        <br>
+        currentDate only => {{currentDate | date:'dd-MM-yyyy'}}
+        <br>
+        currentDate only => {{currentDate | date:'dd/MMM/yyyy'}}
+        <br>
+        currentDate only => {{currentDate | date:'hh:mm:ss'}}
+    </div>
+</div>
+
+
+<div class="row">
     <div class="col-3">
         <ul>
             <li *ngFor="let city of cityList">{{city}}</li>
@@ -36,8 +68,8 @@
             <tbody>
                 <tr *ngFor="let emp of employeeArray; let srno = index">
                     <td>{{srno+1}}</td>
-                    <td>{{emp.name}}</td>
-                    <td>{{emp.city}}</td>
+                    <td>{{emp.name | na}}</td>
+                    <td>{{emp.city | uppercase}}</td>
                     <td>{{emp.contactNo}}</td>
                 </tr>
             </tbody>
