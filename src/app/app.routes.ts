@@ -13,63 +13,78 @@ import { PostApiComponent } from './api/post-api/post-api.component';
 import { CustomerComponent } from './api/customer/customer.component';
 import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
 import { NgForComponent } from './components/ng-for/ng-for.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
         path:'',
-        redirectTo: 'dataBinding',
+        redirectTo: 'login',
         pathMatch:'full'
     },
     {
-        path:'admin',
-        component:AdminComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path:'dataBinding',
-        component:DataBindingComponent
-    },
-    {
-        path:'ng-class',
-        component:NgClassComponent
-    },
-    {
-        path:'ngfor',
-        component:NgForComponent
-    },
-    {
-        path: 'control-flow',
-        component:ControlStatementComponent
-    },
-    {
-        path:'signal',
-        component:SignalComponent
-    },
-    {
-        path:'linkedsignal',
-        component:LinkedSignalComponent
-    },
-    {
-        path:'templateform',
-        component:TemplateformComponent
-    },
-    {
-        path:'reactiveform',
-        component:ReactiveformComponent
-    },
-    {
-        path:'getapi',
-        component:GetApiComponent
-    },
-    {
-        path:'postapi',
-        component:PostApiComponent
-    },
-    {
-        path:'customer',
-        component:CustomerComponent
-    },
-    {
-        path:'lifecycle',
-        component:LifeCycleComponent
+        path: '',
+        canActivate: [authGuard],
+        component: LayoutComponent,
+        children: [
+            {
+                path:'admin',
+                component:AdminComponent
+            },
+            {
+                path:'dataBinding',
+                component:DataBindingComponent
+            },
+            {
+                path:'ng-class',
+                component:NgClassComponent
+            },
+            {
+                path:'ngfor',
+                component:NgForComponent
+            },
+            {
+                path: 'control-flow',
+                component:ControlStatementComponent
+            },
+            {
+                path:'signal',
+                component:SignalComponent
+            },
+            {
+                path:'linkedsignal',
+                component:LinkedSignalComponent
+            },
+            {
+                path:'templateform',
+                component:TemplateformComponent
+            },
+            {
+                path:'reactiveform',
+                component:ReactiveformComponent
+            },
+            {
+                path:'getapi',
+                component:GetApiComponent
+            },
+            {
+                path:'postapi',
+                component:PostApiComponent
+            },
+            {
+                path:'customer',
+                component:CustomerComponent
+            },
+            {
+                path:'lifecycle',
+                component:LifeCycleComponent
+            }
+        ]
     }
+    
 ];

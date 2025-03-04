@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabsComponent } from "../../reusable/tabs/tabs.component";
+import { Car, ICarList } from '../../model/car';
 
 @Component({
   selector: 'app-post-api',
@@ -11,24 +12,26 @@ import { TabsComponent } from "../../reusable/tabs/tabs.component";
 })
 export class PostApiComponent implements OnInit, AfterViewInit {
 
-  http = inject(HttpClient);
-  carList: any[] = [];
-  carObj: any = {
-    "carId": 0,
-    "brand": "",
-    "model": "",
-    "year": "",
-    "color": "",
-    "dailyRate": "",
-    "carImage": "",
-    "regNo": ""
-  }
+  @ViewChild("textCity") cityTextbox : ElementRef | undefined;
 
+  @ViewChild(TabsComponent) myTabViewChild : TabsComponent | undefined;
+
+  http = inject(HttpClient);
+  carList: ICarList [] = [];
+  carObj: Car = new Car();
   currentTab: string = 'Car List';
 
   //used to init variables/values
   constructor(){
 
+  }
+
+  readCity(){
+    const city = this.cityTextbox?.nativeElement.value;
+    if(this.cityTextbox){
+      this.cityTextbox.nativeElement.style.color = "red";
+    }
+    const val = this.myTabViewChild?.currentTab
   }
 
   //trigger api functions

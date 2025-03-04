@@ -9,6 +9,8 @@
         <app-tabs [tabList]="['Car List', 'New Car Form']" (onTabClicked)="onTabChange($event)"></app-tabs>
     </div>
 </div>
+<input type="text" #textCity placeholder="Enter City">
+<button (click)="readCity()">Read Value</button>
 
 <div class="row pt-2">
     @if(currentTab == 'Car List'){
@@ -103,5 +105,4 @@
             </div>
         </div>
     }
-    
 </div>
