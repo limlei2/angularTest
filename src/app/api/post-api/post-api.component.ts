@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TabsComponent } from "../../reusable/tabs/tabs.component";
 
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule],
+  imports: [FormsModule, TabsComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
@@ -23,6 +24,8 @@ export class PostApiComponent implements OnInit, AfterViewInit {
     "regNo": ""
   }
 
+  currentTab: string = 'Car List';
+
   //used to init variables/values
   constructor(){
 
@@ -31,6 +34,10 @@ export class PostApiComponent implements OnInit, AfterViewInit {
   //trigger api functions
   ngOnInit(){
     this.getAllCars();
+  }
+
+  onTabChange(tabName: string) {
+    this.currentTab = tabName;
   }
 
   ngAfterViewInit(): void {
