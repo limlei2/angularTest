@@ -24,11 +24,11 @@ export class LoginComponent {
 
   onLogin(){
     this.http.post("https://freeapi.miniprojectideas.com/api/User/Login", this.loginObj).subscribe((result: any) => {
-      if(result.message == "UserName or Password is Wrong"){
-        alert("Wrong Credentials");
-      } else {
+      if(result.message == "Login Success"){
         localStorage.setItem("angular19User", result.data.token)
         this.router.navigateByUrl("admin");
+      } else {
+        alert("Wrong Credentials");
       }
     }, error => {
       alert("Wrong Credentials")
