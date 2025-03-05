@@ -16,6 +16,7 @@ import { NgForComponent } from './components/ng-for/ng-for.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { authGuard } from './guard/auth.guard';
+import { NgtempComponent } from './components/ngtemp/ngtemp.component';
 
 export const routes: Routes = [
     {
@@ -83,6 +84,10 @@ export const routes: Routes = [
             {
                 path:'lifecycle',
                 component:LifeCycleComponent
+            },
+            {
+                path:'ngtemp',
+                component: NgtempComponent
             }
         ]
     }
